@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnkrhgdlnj2ui"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1phuf"]
+[ext_resource type="Texture2D" uid="uid://cio6lgfg4dfnu" path="res://images/green_paddle.png" id="2_4sstr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lihxn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xt00"]
+size = Vector2(13, 135)
+
+[node name="Player1" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_1phuf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.082, 0.25)
+texture = ExtResource("2_4sstr")
+centered = false
+
+[node name="PaddleBody" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_lihxn")
+
+[node name="PBShape" type="CollisionShape2D" parent="PaddleBody"]
+position = Vector2(5.5, 67.5)
+shape = SubResource("RectangleShape2D_2xt00")
+
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 67.5)
+shape = SubResource("RectangleShape2D_2xt00")

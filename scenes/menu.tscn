@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://deynus4vjuwyn"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_k87yu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pyy0q"]
+
+[sub_resource type="FontFile" id="FontFile_l7m41"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dptvi"]
+font = SubResource("FontFile_l7m41")
+font_size = 60
+shadow_size = 5
+shadow_color = Color(0, 0.929412, 0, 0)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="FontFile" id="FontFile_mem12"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cix1q"]
+font = SubResource("FontFile_mem12")
+font_size = 32
+
+[node name="Menu" type="Node2D"]
+material = SubResource("CanvasItemMaterial_pyy0q")
+script = ExtResource("1_k87yu")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 266.0
+offset_right = 708.0
+offset_bottom = 84.0
+text = "Pong"
+label_settings = SubResource("LabelSettings_dptvi")
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 266.0
+offset_top = 149.0
+offset_right = 708.0
+offset_bottom = 274.0
+mouse_default_cursor_shape = 2
+
+[node name="Label" type="Label" parent="Play"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 30.0
+offset_right = 314.0
+offset_bottom = 69.0
+text = "(P)lay"
+label_settings = SubResource("LabelSettings_cix1q")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Play"]
+z_index = -2
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 125.0
+mouse_filter = 2
+color = Color(0.0352941, 0.321569, 0.337255, 1)
+
+[node name="Quit" type="Button" parent="." node_paths=PackedStringArray("shortcut_context")]
+offset_left = 266.0
+offset_top = 303.0
+offset_right = 708.0
+offset_bottom = 421.0
+mouse_default_cursor_shape = 2
+shortcut_context = NodePath(".")
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 30.0
+offset_right = 314.0
+offset_bottom = 69.0
+text = "(Q)uit
+"
+label_settings = SubResource("LabelSettings_cix1q")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Quit"]
+z_index = -2
+layout_mode = 0
+offset_right = 442.0
+offset_bottom = 118.0
+mouse_filter = 2
+color = Color(0.933333, 0.388235, 0.321569, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 1018.0
+offset_bottom = 509.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+color = Color(0.768627, 0.776471, 0.905882, 1)
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

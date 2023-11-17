@@ -1,0 +1,248 @@
+[gd_scene load_steps=19 format=3 uid="uid://wd2trfifqt6a"]
+
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_deqkc"]
+[ext_resource type="PackedScene" uid="uid://dnkrhgdlnj2ui" path="res://scenes/player.tscn" id="1_p5nfw"]
+[ext_resource type="PackedScene" uid="uid://biivnstcdum7k" path="res://scenes/ball.tscn" id="3_65o7a"]
+[ext_resource type="Script" path="res://scripts/Goal.gd" id="3_cc2bt"]
+[ext_resource type="PackedScene" uid="uid://drs1aiairgkwj" path="res://scenes/wall.tscn" id="6_mkn1t"]
+[ext_resource type="AudioStream" uid="uid://cfqj1fdxwrf8k" path="res://sounds/GAMESET.wav" id="6_ouhuu"]
+[ext_resource type="AudioStream" uid="uid://4dsl0q4kuo3t" path="res://sounds/Sudden Death.wav" id="7_k7a0b"]
+
+[sub_resource type="Theme" id="Theme_ykqgk"]
+default_font_size = 250
+
+[sub_resource type="FontFile" id="FontFile_da3ga"]
+face_index = null
+embolden = null
+transform = null
+cache/0/250/0/ascent = 0.0
+cache/0/250/0/descent = 0.0
+cache/0/250/0/underline_position = 0.0
+cache/0/250/0/underline_thickness = 0.0
+cache/0/250/0/scale = 1.0
+cache/0/250/0/kerning_overrides/250/0 = Vector2(0, 0)
+cache/0/250/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/250/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1dbxa"]
+font = SubResource("FontFile_da3ga")
+font_size = 250
+font_color = Color(0.576471, 0.0862745, 0.129412, 1)
+
+[sub_resource type="FontFile" id="FontFile_srh2c"]
+face_index = null
+embolden = null
+transform = null
+cache/0/250/0/ascent = 0.0
+cache/0/250/0/descent = 0.0
+cache/0/250/0/underline_position = 0.0
+cache/0/250/0/underline_thickness = 0.0
+cache/0/250/0/scale = 1.0
+cache/0/250/0/kerning_overrides/250/0 = Vector2(0, 0)
+cache/0/250/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/250/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xjh6p"]
+font = SubResource("FontFile_srh2c")
+font_size = 250
+font_color = Color(0.768627, 0.776471, 0.905882, 1)
+
+[sub_resource type="FontFile" id="FontFile_rtht6"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_27brq"]
+font = SubResource("FontFile_rtht6")
+font_size = 32
+font_color = Color(0.34902, 0.239216, 0.901961, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 0.478431)
+
+[sub_resource type="FontFile" id="FontFile_3cjbg"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u52cd"]
+font = SubResource("FontFile_3cjbg")
+font_size = 32
+font_color = Color(0.93789, 0.083445, 0.358233, 1)
+shadow_size = 2
+shadow_color = Color(0.3503, 0.241128, 0.901843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqwek"]
+font_size = 50
+font_color = Color(0.784314, 0.784314, 0.392157, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8vek"]
+size = Vector2(844.5, 676)
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_deqkc")
+
+[node name="Po" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 59.0
+offset_right = 492.0
+offset_bottom = 409.0
+theme = SubResource("Theme_ykqgk")
+text = "PO
+"
+label_settings = SubResource("LabelSettings_1dbxa")
+
+[node name="Ng" type="Label" parent="."]
+offset_left = 515.0
+offset_top = 59.0
+offset_right = 1245.0
+offset_bottom = 409.0
+theme = SubResource("Theme_ykqgk")
+text = "NG
+"
+label_settings = SubResource("LabelSettings_xjh6p")
+
+[node name="P1Score" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 5.0
+offset_right = 66.0
+offset_bottom = 52.0
+text = "0"
+label_settings = SubResource("LabelSettings_27brq")
+
+[node name="P2Score" type="Label" parent="."]
+offset_left = 921.0
+offset_top = 4.0
+offset_right = 951.0
+offset_bottom = 53.0
+text = "0"
+label_settings = SubResource("LabelSettings_u52cd")
+
+[node name="Restart" type="Label" parent="."]
+visible = false
+offset_left = 395.0
+offset_top = 360.0
+offset_right = 647.0
+offset_bottom = 435.0
+text = "(R)estart?"
+label_settings = SubResource("LabelSettings_pqwek")
+
+[node name="Quit" type="Label" parent="."]
+visible = false
+offset_left = 395.0
+offset_top = 420.0
+offset_right = 647.0
+offset_bottom = 495.0
+text = "(Q)uit?"
+label_settings = SubResource("LabelSettings_pqwek")
+
+[node name="LeftSide" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 510.0
+offset_bottom = 536.0
+color = Color(0.768627, 0.776471, 0.905882, 1)
+
+[node name="CenterLine" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 509.0
+offset_right = 512.0
+offset_bottom = 536.0
+
+[node name="RightSide" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 511.0
+offset_right = 1021.0
+offset_bottom = 536.0
+color = Color(0.576471, 0.0862745, 0.129412, 1)
+
+[node name="Player1" parent="." instance=ExtResource("1_p5nfw")]
+position = Vector2(15, 190)
+
+[node name="Player2" parent="." instance=ExtResource("1_p5nfw")]
+position = Vector2(995, 190)
+
+[node name="Ball" parent="." instance=ExtResource("3_65o7a")]
+position = Vector2(515, 250)
+
+[node name="LGoal" type="Area2D" parent="."]
+position = Vector2(-100, -116)
+script = ExtResource("3_cc2bt")
+
+[node name="LG_Shape" type="CollisionShape2D" parent="LGoal"]
+position = Vector2(-349, 362)
+shape = SubResource("RectangleShape2D_e8vek")
+
+[node name="Rgoal" type="Area2D" parent="."]
+position = Vector2(-100, -116)
+script = ExtResource("3_cc2bt")
+
+[node name="RG_Shape" type="CollisionShape2D" parent="Rgoal"]
+position = Vector2(1565, 356)
+shape = SubResource("RectangleShape2D_e8vek")
+
+[node name="Wall" parent="." instance=ExtResource("6_mkn1t")]
+
+[node name="Wall2" parent="." instance=ExtResource("6_mkn1t")]
+position = Vector2(2, 531)
+
+[node name="GAMESET" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ouhuu")
+volume_db = -10.0
+
+[node name="SuddenDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_k7a0b")
+
+[connection signal="gameover" from="." to="Player1" method="_freeze"]
+[connection signal="gameover" from="." to="Player2" method="_freeze"]
+[connection signal="gameover" from="." to="Ball" method="_on_gameover"]
+[connection signal="body_entered" from="Player1" to="Ball" method="_on_player_body_entered"]
+[connection signal="body_entered" from="Player2" to="Ball" method="_on_player_body_entered"]
+[connection signal="reset_sig" from="Ball" to="Player1" method="_reset_speed"]
+[connection signal="reset_sig" from="Ball" to="Player2" method="_reset_speed"]
+[connection signal="body_entered" from="LGoal" to="." method="_on_p2_goal"]
+[connection signal="body_entered" from="LGoal" to="P2Score" method="increment_score"]
+[connection signal="body_entered" from="LGoal" to="Ball" method="_on_goal_entered"]
+[connection signal="body_entered" from="Rgoal" to="." method="_on_p1_goal"]
+[connection signal="body_entered" from="Rgoal" to="P1Score" method="increment_score"]
+[connection signal="body_entered" from="Rgoal" to="Ball" method="_on_goal_entered"]
+[connection signal="body_entered" from="Wall" to="Ball" method="_on_wall_bounce"]
+[connection signal="body_entered" from="Wall2" to="Ball" method="_on_wall_bounce"]

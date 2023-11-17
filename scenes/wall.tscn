@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://drs1aiairgkwj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m36r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1xk2"]
+size = Vector2(1032, 29)
+
+[node name="Wall" type="Area2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_m36r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(509, -12)
+shape = SubResource("RectangleShape2D_q1xk2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(509, -12)
+shape = SubResource("RectangleShape2D_q1xk2")
